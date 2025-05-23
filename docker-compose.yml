@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  tutoring-bot:
+    build: .
+    container_name: tutoring-bot
+    ports:
+      - "7860:7860"
+    environment:
+      - OLLAMA_BASE_URL=http://ollama:11434
+      - SERVER_NAME=0.0.0.0
+      - SERVER_PORT=7860
+      - MODEL_NAME=qwen3:0.6b
+    depends_on:
+      - ollama
+    networks:
+      - tutoring-network
+    command: python app.py
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-data:/root/.ollama
+    networks:
+      - tutoring-network
+
+networks:
+  tutoring-network:
+    driver: bridge
+
+volumes:
+  ollama-data:
