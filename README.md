@@ -2,6 +2,16 @@
 
 A sophisticated tutoring system built with LangChain, Ollama, and Gradio that uses specialized AI agents to help students with mathematics and physics questions.
 
+
+
+
+https://github.com/user-attachments/assets/34c97ff0-d9d2-4574-ba78-093556309d49
+
+Deployed URL: https://multi-agent-tutoring-bot-production-da1f.up.railway.app/
+
+**⚠️ Note:** This app is hosted on a free-tier deployment environment with limited hardware resources, which may lead to slower response times. For best performance, consider running the app locally.
+
+---
 ## Architecture
 
 ### Main Components
